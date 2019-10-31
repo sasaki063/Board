@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "login", :to => "users/sessions#new"
   get "logout", :to => "users/sessions#destroy"
   end
+
+  resources :posts
 end
