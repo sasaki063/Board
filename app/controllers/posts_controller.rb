@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       post.update(post_params)
       redirect_to post
   end
-  
+
   def destroy
       post = Post.find(params[:id])
       post.delete
@@ -34,6 +34,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:name, :category)
+      params.require(:post).permit(:name, :category, :user_id)
     end
   end
