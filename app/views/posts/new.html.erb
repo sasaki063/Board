@@ -1,0 +1,13 @@
+<h1>投稿</h1>
+<%= link_to '投稿一覧', posts_path %>
+<%= form_for @post do |f| %>
+    <%= f.label :name, '掲示板名' %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :category, 'ジャンル' %>
+    <%= f.text_field :category %>
+    <br>
+
+<%= f.submit '投稿' %>
+<small>投稿する前に投稿内容を見直してください!</small>
+<% end %>
