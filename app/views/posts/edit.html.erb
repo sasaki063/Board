@@ -1,0 +1,15 @@
+<%= link_to '編集', edit_post_path(@post) %>
+<%= link_to '投稿一覧', posts_path %>
+
+<%= form_for @post do |f| %>
+    <%= f.label :name, '落とし物' %>
+    <%= f.text_field :name %>
+    <small>掲示板名</small>
+  <br>
+    <%= f.label :category, 'ジャンル' %>
+    <%= f.text_field :category %>
+    <small>ジャンル</small>
+  <br>
+      <%= f.submit '投稿' %>
+      <small>投稿する前に投稿内容を見直してください!</small>
+<% end %>
