@@ -8,11 +8,12 @@ class PostsController < ApplicationController
   end
 
   def new
-      @post = Post.new
+      @post = Post.new(user_id: current_user.id)
+      @post.save
   end
 
   def create
-      post = Post.create(post_params)
+      @post = Post.create(post_params)
       redirect_to post
   end
 
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
       post.update(post_params)
       redirect_to post
   end
-  
+
   def destroy
       post = Post.find(params[:id])
       post.delete
@@ -36,4 +37,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:name, :category)
     end
+
   end
