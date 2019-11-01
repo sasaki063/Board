@@ -16,6 +16,7 @@
               <td><%= post.user_id %></td>
               <td><%= post.created_at.to_s(:datetime_base) %></td>
               <td><%= post.updated_at.to_s(:datetime_base) %></td>
+              <td><%= link_to '詳細', post %></td>
               <td><%= link_to "削除" , post, method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
           </tr>
         <% end %>
