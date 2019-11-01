@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_back(fallback_location: posts_path)
+      redirect_to posts_path
     else
-      redirect_back(fallback_location: posts_path)
+      redirect_to posts_path
     end
 
   end
