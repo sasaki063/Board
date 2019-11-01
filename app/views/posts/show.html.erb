@@ -6,11 +6,10 @@
 
     <h2>コメント一覧</h2>
 <% @comments.each do |c| %>
-    <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
     <%= c.content %>
 <% end %>
 
-<%= form_for [@post, @comment] do |f| %>
+<%= form_for [@comment] do |f| %>
   <%= f.text_field :content %>
   <br>
   <%= f.submit 'コメントする' %>
